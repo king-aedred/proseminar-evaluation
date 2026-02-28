@@ -1,0 +1,14 @@
+============================================
+DEMO 1: Iterative Refinement
+Matrix size: 1000x1000
+============================================
+
+Solving Ax = b where x_true = [1, 2, 3, ..., 1000]
+
+--- Naive FP64 Solution ---
+Solution: [1.0000000000, 2.0000000000, 3.0000000000, 4.0000000000, 5.0000000000, ...]
+Error vs true: 4.4774411429e-11
+Residual ||Ax-b||: 5.5242986761e-08
+Relative error ||x-x_true||/||x_true||: 2.4505576721e-15
+Time: 5723013 μs
+

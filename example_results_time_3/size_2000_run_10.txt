@@ -1,0 +1,40 @@
+============================================
+DEMO 1: Iterative Refinement
+Matrix size: 2000x2000
+============================================
+
+Solving Ax = b where x_true = [1, 2, 3, ..., 2000]
+
+--- Naive FP64 Solution ---
+Solution: [1.0000000000, 2.0000000000, 3.0000000000, 4.0000000000, 5.0000000000, ...]
+Error vs true: 1.7325273388e-10
+Residual ||Ax-b||: 4.2471934177e-07
+Relative error ||x-x_true||/||x_true||: 3.3537671286e-15
+Time: 1055654 μs
+
+--- Naive FP32 Solution ---
+Solution: [1.0010093451, 1.9996250868, 3.0004591942, 3.9990594387, 4.9985299110, ...]
+Error vs true: 9.2118300761e-02
+Residual ||Ax-b||: 2.3096530074e+02
+Relative error ||x-x_true||/||x_true||: 1.7831945396e-06
+Time: 908416 μs
+
+--- Mixed Precision with Iterative Refinement ---
+Iter 0 - Residual: 2.310e+02
+Iter 1 - Residual: 2.310e+02
+Iter 2 - Residual: 4.872e-04
+Iter 3 - Residual: 2.104e-07
+Iter 4 - Residual: 1.048e-07
+Iter 5 - Residual: 7.170e-08
+
+Final solution: [1.000e+00, 2.000e+00, 3.000e+00, 4.000e+00, 5.000e+00, ...]
+Error vs true: 2.450e-11
+Residual ||Ax-b||: 6.207e-08
+Relative error ||x-x_true||/||x_true||: 4.742e-16
+Time: 710876 μs
+
+Summary:
+  FP32 error improvement over FP64: 5.317e+08x
+  Mixed precision error vs FP64: 1.414e-01x
+  Mixed precision achieves FP64-level accuracy!
+
